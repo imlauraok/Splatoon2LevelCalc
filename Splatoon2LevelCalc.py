@@ -4,6 +4,7 @@ CurrentLevel = 1
 CurrentLevelXP = 0
 CurrentTotalXP = 0
 TargetLevel = 99 # TODO allow user to choose target level
+XPToTarget = 0
 
 # Test pulling total XP for level from list
 #for x in range(len(TotalXPList)):
@@ -13,6 +14,10 @@ CurrentLevel = int(input("What is your current level? ")) # TODO check input is 
 CurrentLevelXP = int(input("How much XP do you have in the current level? ")) # TODO check input is valid before continuing
 CurrentTotalXP = TotalXPList[CurrentLevel] + CurrentLevelXP
 
+XPToTarget = (TotalXPList[TargetLevel] - CurrentTotalXP)
+
 print("Total XP:", CurrentTotalXP)
-print("XP to level", TargetLevel, "=", (TotalXPList[TargetLevel] - CurrentTotalXP))
-print(((CurrentTotalXP / TotalXPList[TargetLevel]) * 100), "% of total XP earned")
+print("XP to level", TargetLevel, "=", XPToTarget)
+print(((CurrentTotalXP / TotalXPList[TargetLevel]) * 100), "% of total XP earned") # TODO reduce number of decimal places printed
+print((XPToTarget / 1100), "average Turf War games remaining,", (XPToTarget / 1100 * 3), "minutes of gameplay") # An average Turf War game is calculated as two games (one win one loss) with max turf inked, then divided by two
+# TODO add Ranked Mode calculator
