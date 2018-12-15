@@ -6,8 +6,8 @@ CurrentTotalXP = 0
 TargetLevel = 99 # TODO allow user to choose target level
 
 # Test pulling total XP for level from list
-for x in range(len(TotalXPList)):
-    print("Total XP for level", x, "is", TotalXPList[x])
+#for x in range(len(TotalXPList)):
+#    print("Total XP for level", x, "is", TotalXPList[x])
 
 CurrentLevel = int(input("What is your current level? ")) # TODO check input is valid before continuing
 CurrentLevelXP = int(input("How much XP do you have in the current level? ")) # TODO check input is valid before continuing
@@ -15,3 +15,4 @@ CurrentTotalXP = TotalXPList[CurrentLevel] + CurrentLevelXP
 
 print("Total XP:", CurrentTotalXP)
 print("XP to level", TargetLevel, "=", (TotalXPList[TargetLevel] - CurrentTotalXP))
+print(((CurrentTotalXP / TotalXPList[TargetLevel]) * 100), "% of total XP earned")
